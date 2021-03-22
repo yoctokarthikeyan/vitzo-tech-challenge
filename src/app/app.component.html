@@ -1,0 +1,30 @@
+<mat-grid-list cols="4" rowHeight="50px" [ngClass]="{'dark':isDark}">
+    <mat-grid-tile colspan="4" rowspan="2">
+        <mat-slide-toggle [(ngModel)]="isDark">
+            DARK MODE
+        </mat-slide-toggle>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="4" rowspan="2">
+        <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="10" min="0" max="1000"
+            [(ngModel)]="sliderRangeValue">
+        </mat-slider>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="4" rowspan="1">
+        <button mat-raised-button color="{{isDark?'warn':'primary'}}" [disabled]="sliderRangeValue===0"
+            (click)="onSubmit()">SHOW</button>
+    </mat-grid-tile>
+</mat-grid-list>
+<div class="content-wrapper" [ngClass]="{'dark':isDark}">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- <router-outlet></router-outlet> -->
